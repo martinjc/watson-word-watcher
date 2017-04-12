@@ -5,7 +5,9 @@ API_DEFAULT_PARAMS = {
     'timestamps': True,
     'word_confidence': True,
     'profanity_filter': False,
-    'word_alternatives_threshold': 0.4
+    'word_alternatives_threshold': 0.4,
+    'inactivity_timeout': -1,
+    #'model': 'en-UK_BroadbandModel'
 }
 
 API_DEFAULT_HEADERS = {

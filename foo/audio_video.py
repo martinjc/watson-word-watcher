@@ -44,9 +44,9 @@ def extract_audio_file(src_video_path, dest_audio_path,
     audio_bitrate (str): e.g. '16k'
     """
 
-    movie = VideoFileClip(src_video_path)
-    audio = movie.audio
-    audio.write_audiofile(dest_audio_path,
+    movie = AudioFileClip(src_video_path)
+    #audio = movie.audio
+    movie.write_audiofile(dest_audio_path,
                 codec=audio_codec,bitrate=audio_bitrate)
     return dest_audio_path
 

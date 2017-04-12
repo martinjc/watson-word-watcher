@@ -1,4 +1,4 @@
-from os import makedirs
+from os import makedirs, listdir
 from os.path import join, basename, splitext, expanduser, abspath, isdir
 from glob import glob
 from shutil import copyfile
@@ -127,7 +127,7 @@ def audio_segments_filenames(slug):
     and that it is filled with JSON formatted transcripts,
     this returns a list of globbed JSON files
     """
-    return glob(join(audio_segments_dir(slug), '*.wav'))
+    return [join(audio_segments_dir(slug), f) for f in listdir(audio_segments_dir(slug)) if f.endswith('.wav')]
 
 def supercuts_dir(slug):
     d = join(project_dir(slug), "supercuts")
@@ -154,7 +154,7 @@ def transcripts_filenames(slug):
     and that it is filled with JSON formatted transcripts,
     this returns a list of globbed JSON files
     """
-    return glob(join(transcripts_dir(slug), '*.json'))
+    return [join(transcripts_dir(slug), f) for f in listdir(transcripts_dir(slug)) if f.endswith('.json')]
 
 
 

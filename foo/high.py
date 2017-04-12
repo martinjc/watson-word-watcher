@@ -37,8 +37,10 @@ def transcribe_audio(project_slug, creds, overwrite=False):
     #
     # returns nothing...just prints to screen
     audio_segments_fnames = audio_segments_filenames(project_slug)
+    print(audio_segments_fnames)
     watson_jobs = []
     for audio_fn in audio_segments_fnames:
+        print(audio_fn)
         time_slug = make_slug_from_path(audio_fn)
         transcript_fn = join(transcripts_dir(project_slug), time_slug) + '.json'
         if not exists(transcript_fn):
